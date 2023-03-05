@@ -1,4 +1,4 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect, useCallback } from 'react'
 import useWebSocket from 'react-use-websocket'
 import './Chat.css'
@@ -45,7 +45,7 @@ const Chat = ({ username, token }) => {
       console.log('message sent ✈️')
       setMessage('')
     },
-    [message, sendJsonMessage]
+    [message, username, sendJsonMessage]
   )
 
   return (

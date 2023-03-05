@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
 import { DateGreeting } from './components/DateGreeting'
-import axios from 'axios'
 import Login from './components/Login'
 import useLocalStorageState from 'use-local-storage-state'
 import { Route, Routes, Link, useLocation, Navigate } from 'react-router-dom'
@@ -9,10 +7,9 @@ import Chat from './components/Chat'
 import './App.css'
 
 function App(props) {
-  const [devs, setDevs] = useState([])
-  const [token, setToken] = useLocalStorageState('devsToken', '')
+  const [token, setToken] = useLocalStorageState('wsToken', '')
   const [loggedInUser, setLoggedInUser] = useLocalStorageState(
-    'devsLoggedInUser',
+    'wsLoggedInUser',
     ''
   )
   const location = useLocation()
